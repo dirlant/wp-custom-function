@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Custom Functions WP
- * Description:       A handy little plugin to contain your theme customisation snippets.
+ * Description:       Estructura de funciones para wordpress, genéricas.
  * Plugin URI:        http://github.com/
  * Version:           1.0.0
  * Author:            Key Systems
