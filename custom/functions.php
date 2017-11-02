@@ -23,4 +23,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 * @return string|null Post title for the latest,  * or null if none.
 */
 
-include ('random-post.php');
+include ('random-post.php'); //incluir archivo de funciones;
