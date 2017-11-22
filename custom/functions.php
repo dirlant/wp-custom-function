@@ -31,4 +31,5 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 include ('random-post.php'); //incluir archivo de funciones;
+include ('general-options.php'); //incluir archivo de funciones;
 
