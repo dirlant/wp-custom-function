@@ -38,7 +38,7 @@ final class Theme_Customisations {
 	 * Setup all the things
 	 */
 	public function theme_customisations_setup() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'theme_customisations_css' ), 999 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'theme_customisations_css' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'theme_customisations_js' ) );
 		add_filter( 'template_include',   array( $this, 'theme_customisations_template' ), 11 );
 		add_filter( 'wc_get_template',    array( $this, 'theme_customisations_wc_get_template' ), 11, 5 );

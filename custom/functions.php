@@ -33,3 +33,75 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 include ('random-post.php'); //incluir archivo de funciones;
 include ('general-options.php'); //incluir archivo de funciones;
 
+
+
+add_action('init', 'custom_scripts'); // scripts
+add_action('wp_enqueue_scripts', 'custom_styles'); // estilos css
+add_action('login_enqueue_scripts', 'login_style', 10 ); // login
+
+/*------------------------------------*\
+	Cargando los scripts
+\*------------------------------------*/
+function custom_scripts()
+{
+  if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+
+		wp_register_script('jquery', plugin_dir_url( __FILE__ ) . 'vendor/jquery/jquery.min.js', array(), 'v3.2.1', true); // Bootstrap
+		wp_enqueue_script('jquery'); // Enqueue it!
+
+		wp_register_script('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/js/bootstrap.min.js', array(), 'v4.0.0-beta', true); // Bootstrap
+    wp_enqueue_script('bootstrap'); // Enqueue it!
+
+		wp_register_script('popper', plugin_dir_url( __FILE__ ) . 'vendor/popper/popper.js', array(), '1.11.1', true); // Bootstrap
+    wp_enqueue_script('bootstrap'); // Enqueue it!
+
+    wp_register_script('conditionizr', plugin_dir_url( __FILE__ ) . 'vendor/js/conditionizr-4.3.0.min.js', array(), '4.3.0', true); // Conditionizr
+    wp_enqueue_script('conditionizr'); // Enqueue it!
+
+    wp_register_script('modernizr', plugin_dir_url( __FILE__ ) . 'vendor/js/modernizr-2.7.1.min.js', array(), '2.7.1', true); // Modernizr
+    wp_enqueue_script('modernizr'); // Enqueue it!
+
+  }
+}
+
+
+/*------------------------------------*\
+	Cargando los estilos
+\*------------------------------------*/
+function custom_styles()
+{
+  if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+	  wp_register_style('normalize', plugin_dir_url( __FILE__ ) . 'vendor/css/normalize.min.css', array(), '1.0', 'all');
+	  wp_enqueue_style('normalize'); // Enqueue it!
+
+	  wp_register_style('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/css/bootstrap.min.css', array(), '3.7.0', 'all');
+	  wp_enqueue_style('bootstrap'); // Enqueue it!
+
+	  wp_register_style('fontawesome', plugin_dir_url( __FILE__ ) . 'vendor/css/font-awesome.min.css', array(), '4.7.0', 'all');
+	  wp_enqueue_style('fontawesome'); // Enqueue it!
+
+  }
+}
+
+
+/*------------------------------------*\
+	Personalizando el LOGIN
+\*------------------------------------*/
+
+function login_style() {
+  wp_enqueue_style( 'vegasCSS', get_template_directory_uri() . '/login/css/vegas.min.css', false );
+  wp_enqueue_style( 'loginCSS', get_template_directory_uri() . '/login/css/loginStyles.css', false );
+
+  wp_enqueue_script( 'jquery' );
+  wp_enqueue_script( 'vegasJS', get_template_directory_uri() . '/login/js/vegas.min.js', array('jquery'), '1.0.0', true);
+  wp_enqueue_script( 'loginjs', get_template_directory_uri() . '/login/js/login.js', array('jquery'), '1.0.0', true);
+
+
+  wp_localize_script(
+    'loginjs',
+    'login_imagenes',
+    array(
+      "ruta_plantilla" => get_template_directory_uri()
+    )
+  );
+}
