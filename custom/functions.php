@@ -51,7 +51,7 @@ function custom_scripts()
     wp_register_script('conditionizr', plugin_dir_url( __FILE__ ) . 'vendor/conditionizr/conditionizr-4.3.0.min.js', array(), '4.3.0', false); // Conditionizr
     wp_enqueue_script('conditionizr'); // Enqueue it!
 
-    wp_register_script('jquerycustom', plugin_dir_url( __FILE__ ) . 'vendor/jquery/jquery.min.js', array(), '3.2.1', true); // jQuery
+    wp_register_script('jquerycustom', plugin_dir_url( __FILE__ ) . 'vendor/jquery/jquery.min.js', array(), '3.2.1', false); // jQuery
     wp_enqueue_script('jquerycustom'); // Enqueue it!
 
     wp_register_script('popper', plugin_dir_url( __FILE__ ) . 'vendor/popper/popper.min.js', array(), '1.11.1', true); // Popper
