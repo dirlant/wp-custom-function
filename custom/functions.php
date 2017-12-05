@@ -76,7 +76,7 @@ function custom_styles()
 	  wp_register_style('normalize', plugin_dir_url( __FILE__ ) . 'vendor/normalize.min.css', array(), '1.0', 'all');
 	  wp_enqueue_style('normalize'); // Enqueue it!
 
-	  wp_register_style('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/css/bootstrap-reboot.min.css', array(), '3.7.0', 'all');
+	  wp_register_style('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/css/bootstrap-reboot.min.css', array(''), '3.7.0', 'all');
     wp_enqueue_style('bootstrap-reboot'); // Enqueue it!
 
     wp_register_style('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/css/bootstrap.min.css', array(), '3.7.0', 'all');
