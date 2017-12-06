@@ -47,7 +47,7 @@ add_action('login_enqueue_scripts', 'login_style', 10 ); // login
 function custom_scripts()
 {
   if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-      
+
     wp_register_script('conditionizr', plugin_dir_url( __FILE__ ) . 'vendor/conditionizr/conditionizr-4.3.0.min.js', array(), '4.3.0', false); // Conditionizr
     wp_enqueue_script('conditionizr'); // Enqueue it!
 
@@ -58,11 +58,11 @@ function custom_scripts()
     wp_enqueue_script('popper'); // Enqueue it!
 
     wp_register_script('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/js/bootstrap.min.js', array(), '4.0.0-beta', true); // Bootstrap
-    wp_enqueue_script('bootstrap'); // Enqueue it!    
+    wp_enqueue_script('bootstrap'); // Enqueue it!
 
     wp_register_script('modernizr', plugin_dir_url( __FILE__ ) . 'vendor/modernizr/modernizr-2.7.1.min.js', array(), '2.7.1', true); // Modernizr
-    wp_enqueue_script('modernizr'); // Enqueue it!    
-    
+    wp_enqueue_script('modernizr'); // Enqueue it!
+
   }
 }
 
@@ -72,18 +72,15 @@ function custom_scripts()
 \*------------------------------------*/
 function custom_styles()
 {
-  if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {  
+  if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 	  wp_register_style('normalize', plugin_dir_url( __FILE__ ) . 'vendor/normalize.min.css', array(), '1.0', 'all');
 	  wp_enqueue_style('normalize'); // Enqueue it!
 
-	  wp_register_style('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/css/bootstrap-reboot.min.css', array(''), '3.7.0', 'all');
-    wp_enqueue_style('bootstrap-reboot'); // Enqueue it!
+	  wp_register_style('fontawesome', plugin_dir_url( __FILE__ ) . 'vendor/font-awesome/css/font-awesome.min.css', array(), '4.7.0', 'all');
+	  wp_enqueue_style('fontawesome'); // Enqueue it!
 
     wp_register_style('bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/bootstrap/css/bootstrap.min.css', array(), '3.7.0', 'all');
 	  wp_enqueue_style('bootstrap'); // Enqueue it!
-
-	  wp_register_style('fontawesome', plugin_dir_url( __FILE__ ) . 'vendor/font-awesome/css/font-awesome.min.css', array(), '4.7.0', 'all');
-	  wp_enqueue_style('fontawesome'); // Enqueue it!
 
   }
 }
