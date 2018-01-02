@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Custom Functions WP
+ * Plugin Name:       Funciones Personalizads
  * Description:       Estructura de funciones para wordpress, genéricas.
  * Plugin URI:        http://github.com/
  * Version:           1.0.0
